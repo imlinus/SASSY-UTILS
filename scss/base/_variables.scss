@@ -1,0 +1,60 @@
+/* SETTINGS - default settings
+---------------------------------------------------------------------- */
+$grid: false !default; // Toggle vertical rythm guidelines
+$rem-with-px-fallback: true !default; // IE9 & Below needs PX fallback
+
+$base-font-size: 16px !default; // global base font-size
+$line-height: 1.5rem !default; // global line-height
+
+$prefix: -webkit-, -moz-, -ms- !default; // set your browser support here
+
+$generated_sprites_folder : 'generated/' !default; // default directory for generated sprites
+$sprites: sprite-map('sprites/*.png', $spacing: 10px) !default;  // default directory for images
+$sprites-retina: sprite-map('sprites-retina/*.png', $spacing: 10px) !default; // default directory for retina-images
+
+/* COLOURS - define all colors here
+---------------------------------------------------------------------- */
+$white: white;
+$smokewhite: darken($white, 2%);
+
+$black: black;
+$gray: #333;
+
+// social networks
+$facebook: #3B5998;
+$twitter: #00ACED;
+$instagram: #517FA4;
+$pinterest: #C92228;
+$googleplus: #D34836;
+
+/* TEXT COLOURS - link color to element
+---------------------------------------------------------------------- */
+$default-txt-color: $gray;
+
+/* BACKGROUND COLOURS - link color to element
+---------------------------------------------------------------------- */
+$default-bg-color: $smokewhite;
+
+/* Z-INDEX - order high to low
+---------------------------------------------------------------------- */
+
+
+/* SIZEING
+---------------------------------------------------------------------- */
+
+
+/* TRANSITIONS
+---------------------------------------------------------------------- */
+
+
+/* MEDIA-QUERIES
+---------------------------------------------------------------------- */
+$is-print:         "print";
+$is-mobile:      "(max-width: 480px)";
+$is-tablet:        "(max-width: 768px)";
+$is-retina:        "(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5)";
+$is-desktop:    "(min-width: 1024px)";
+$is-portrait:     "(oriantation: portrait)";
+$is-landscape: "(orientation: landscape)";
+$is-iphone-5:  "(device-aspect-ratio: 40/71)";
+$is-under-iphone-5: "(device-aspect-ratio: 2/3)";

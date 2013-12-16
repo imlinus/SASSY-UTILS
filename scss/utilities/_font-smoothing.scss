@@ -1,0 +1,6 @@
+// Simple mixin for font-smoothing
+// use: antialiased, subpixel-antialiased or none
+
+@mixin font-smoothing($value: antialiased) {
+  @include prefix(font-smoothing, $value);
+}

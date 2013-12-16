@@ -1,0 +1,216 @@
+/* VERTICAL RHYTHM GRID
+---------------------------------------------------------------------- */
+@if $grid == true {
+  $grid-background-total-columns: 12;
+  $grid-background-baseline-height: $line-height;
+  $grid-background-column-color: rgba(255, 255, 255, 0);
+
+  html { @include grid-background(); }
+  body { background: none !important; }
+}
+
+/* DOCUMENT
+---------------------------------------------------------------------- */
+
+* {
+  @include box-sizing(border-box);
+  @include font-smoothing(antialiased);
+}
+
+html {
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  @include font-size(1rem);
+
+  @include respond(mobile) {
+    @include font-size(.9rem);
+  }
+}
+
+body {
+  background: $default-bg-color; // smokewhite
+  color: $default-txt-color; // dark gray
+  line-height: $line-height; // 1.5
+  font: { family: sans-serif; }
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+%just-for-show {
+  @include sprite(play);
+}
+
+/* ANCHORS & BUTTONS
+---------------------------------------------------------------------- */
+
+a, a:visited {
+  color: $default-txt-color; // dark gray
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* HEADINGS
+---------------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
+  @include margin(0 0 1.5rem 0);
+}
+
+h1 {
+  @include font-size(4rem);
+  @include line-height(4.5rem);
+}
+
+h2 {
+  @include font-size(3.5rem);
+  @include line-height(4.5rem);
+}
+
+h3 {
+  @include font-size(2.5rem);
+  @include line-height(3rem);
+}
+
+h4 {
+  @include font-size(2rem);
+  @include line-height(3rem);
+}
+
+h5 {
+  @include font-size(1.5rem);
+  @include line-height(1.5rem);
+}
+
+h6 {
+  @include font-size(1rem);
+  @include line-height(1.5rem);
+}
+
+/* TEXT
+---------------------------------------------------------------------- */
+
+p {
+  @include margin(1.5rem 0);
+}
+
+em {
+  font: { style: italic; }
+}
+
+strong {
+  font: { weight: 600; }
+}
+
+blockquote {
+  background: darken($white, 6%);
+  border-left: px-calc(.25rem) darken($white, 12%) solid;
+  font: { style: italic; }
+  @include margin(0rem 1.5rem);
+  @include padding(.75rem 1.5rem);
+  @extend %inline-block;
+
+  & p { margin: 0; }
+  & a, & a:visited {
+    @include font-size(.8rem);
+    text-decoration: none;
+
+    &:before {
+      content: '\2014';
+      @include padding-right(.25rem);
+    }
+  }
+}
+
+code {
+  box-shadow: 0px 0px 0px 2px darken(white, 15%) inset;
+  background: darken(white, 5%);
+  border-radius: 2px;
+  @include font-size(.9rem);
+  @include padding(.75rem 1.25rem);
+  @extend %inline-block;
+}
+
+/* FORM ELEMENTS
+---------------------------------------------------------------------- */
+
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+  width: 100%;
+  outline: 0;
+  border: 2px darken(white, 15%) solid;
+  background: darken(white, 5%);
+  color: $default-txt-color; // dark gray
+  @include padding(.80rem);
+  @include margin-bottom(1.5rem);
+}
+
+input[type=submit] {
+  outline: 0;
+  border: 2px gray solid;
+  background: gray;
+  color: white;
+  display: block;
+  @include padding(.8rem 1.5rem);
+
+  &:hover {
+    border-color: darken(gray, 15%);
+    background: darken(gray, 15%);
+  }
+
+  &:active { background: darken(gray, 25%); }
+}
+
+textarea {
+  resize: none;
+  @include min-height(9rem);
+}
+
+label {
+
+}
+
+/* MEDIA
+---------------------------------------------------------------------- */
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* PRINT
+---------------------------------------------------------------------- */
+@include respond(print) {
+  body {
+    font: { family: serif; }
+    color: black;
+    background: transparent;
+  }
+
+  a, a:visited {
+    text-decoration: none;
+  }
+
+  a:after {
+    content: " ( " attr(href) " ) ";
+    @include font-size(.8rem);
+    font: { weight: normal; }
+  }
+
+  form {
+    display: none;
+  }
+
+  blockquote, code {
+    border: 0px;
+    background: transparent;
+    box-shadow: 0px 0px 0px 0px transparent inset;
+  }
+}
