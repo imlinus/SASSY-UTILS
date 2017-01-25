@@ -1,6 +1,6 @@
 # SASSYUTILS
 
-Our utilities to help us speed up our SCSS development.
+I've build these in 2013. Still very much attractive for the CSS building scene. Please use them for your pleasure
 
 ## Index
 * Prelude
